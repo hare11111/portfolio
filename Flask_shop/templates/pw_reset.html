@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{url_for('static', filename='favicon/favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login_syoki.css')}}">
+    {% if result == "ok" %}
+    <title>パスワードリセット完了</title>
+    {% else %}
+    <title>パスワードリセット失敗</title>
+    {% endif %}
+</head>
+<body>
+<div id=syoki>
+    {% if result == "ok" %}
+        <h1>パスワードリセット完了</h1>
+        <a href="{{url_for('login')}}"><p>ログインページへ</p></a>
+    {% else %}
+        <h1>パスワードリセット失敗</h1>
+        <a href="{{url_for('pw_sai')}}"><p>もう一度やり直してください</p></a>
+    {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: aqua;
+}
+
+header {
+    height: 10%;
+}
+
+nav {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background: #005FFF;
+}
+
+nav ul {
+    display: flex;
+    padding: 0;
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav ul li {
+    list-style: none;
+    width: 20%;
+    text-align: center;
+    margin: 2px;
+    background: yellow;
+}
+
+main {
+    height: 80%;
+}
+
+footer {
+    background: #005FFF;
+    height: 5%;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+}
+
+/* top~ */
+#product {
+    text-align: center;
+}
+
+#taitoru {
+    font-size: 50px;
+}
+
+.osusume {
+    font-size: 20px;
+}
+
+
+/* syousai.html */
+.product_data {
+    width: 80%;
+    color: black;
+    text-align: center;
+    font-size: 25px;
+}
+
+.namea {
+    width: 50px;
+    font-size: 20px;
+}
+
+.imgagse {
+    display: inline-block;
+    text-align: center;
+}
+img {
+    width: 250px;
+    height: 250px;
+
+}
+
+#imgas {
+    width: 80%;
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imga {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+}
+
+/* kounyu.html */
+.syouhin {
+    font-size: 20px;
+}
+
+.gaku {
+    font-size: 30px;
+}
+
+
+/* last */
+.kakunin {
+    font-size: 20px;
+}
+
+
+
+.data {
+    border: dotted 3px black;
+}
+
+.button {
+    text-align: center;
+    font-size: 20px;
+}
+.buttons {
+    width: 150px;
+    font-size: 20px;
+}
+.hyou {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.t {
+    background-color: blue;
+    color: black;
+}
+
+tr:nth-child(odd) td {  
+    background-color: #ffdead;  
+  }
+
+tr:nth-child(even) td {  
+    background-color: #ffe4c4;  
+  }
+
+
+#henkou {
+    text-align: center;
+    font-size: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* account */
+.dl {
+    width: 55%;
+    margin: 0 auto;
+}
+
+.u_dt {
+    width:300px;
+    background-color: yellow;
+}
+
+.naiyou {
+    display: flex;
+    border: solid 1px red;
+}
+
+.mozi {
+    font-size: 15px;
+    color: red;
+}
+
+.hissu {
+    color: white;
+    background-color: red;
+    font-size: 10px;
+    border-radius: 10px;
+}
+
+.names {
+    font-size: 20px;
+}
+
+.namesa {
+    font-size: 20px;
+}

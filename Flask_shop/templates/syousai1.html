@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% set name = "images/" + product[5] %}
+<form action="{{url_for('add')}}">
+    <div id="imgas">
+    <input type="hidden" name="no" value={{product[0]}}>
+    <input type="hidden" name="name" value={{product[1]}}>
+    <input type="hidden" name="price" value={{product[2]}}>
+    <input type="hidden" name="cla" value={{product[4]}}>
+    <div class="imga">
+        <img src="{{url_for('static', filename=name)}}" alt={{product[1]}}>
+        <br>
+        <br>
+            <button type="submit" class="button">カートに入れる</button>
+    </div>
+    <div class="product_data">
+        <h1>{{product[1]}}</h1>
+        <span class="price">{{product[2]}}円</span> <br>
+        <label>購入数 <input class="namea" type="number" name="cnt" value="1" min="1"></label>
+        <div class="data">
+            {% autoescape false %}
+            <p>{{data}}</p>
+            {% endautoescape %}
+        </div>
+        
+    </div>
+</div>
+</form>
+<br>
+<form action="{{url_for('osusume')}}">
+    <div class="button">
+        <button type="submit" class="buttons">戻る</button>
+    </div>
+</form>
+
+{% endblock %}

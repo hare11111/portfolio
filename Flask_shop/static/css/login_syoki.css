@@ -1,0 +1,111 @@
+/* ログインページ */
+body {
+    background-color: aqua;
+}
+#log {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* index.html */
+.ip {
+    text-align: left;
+    display: flex;
+}
+
+.ips {
+    width: 300px;
+    text-align: right;
+    background-color: aqua;
+}
+
+.ipa {
+    font-size: 20px;
+}
+
+
+
+/* syoki.html */
+.dl {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.dls {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.namea {
+    font-size: 20px;
+}
+
+.error {
+    color: red;
+}
+
+/* 初期登録 */
+#syoki {
+    text-align: center;
+    font-size: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+dt {
+    width:300px;
+    /* text-align: right; */
+    background-color: yellow;
+}
+
+.naiyou {
+    display: flex;
+    border: solid 1px red;
+}
+/*必須*/
+.hissu {
+    color: white;
+    background-color: red;
+    font-size: 10px;
+    border-radius: 10px;
+}
+
+
+.button {
+    font-size: 20px;
+    width: 250px;
+    background-color: #87ceeb;
+    color: black;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+
+.mozi {
+    font-size: 11px;
+}
+
+.error {
+    color: red;
+}
+
+/* ninsyo.html */
+.btn {
+    width: 200px;
+    font-size: 20px;
+    background-color: #87ceeb;
+}
+
+/* kakunin.html */
+.dls {
+    width: 70%;
+    margin: 0 auto;
+}

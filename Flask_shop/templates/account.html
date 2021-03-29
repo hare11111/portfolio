@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="henkou">
+    <form action="{{url_for('account2')}}" method="POST">
+        <h1 id="taitoru">ユーザー情報変更</h1>
+        <dl class="dl">
+
+            <div class="naiyou">
+                <dt class="u_dt"><label>ID<span class="mozi">(変更不可)</span></label></dt>
+                <dd><input class="names" type="text" name="id" value={{data[0]}} readonly></dd>
+            </div>
+            
+            <div class="naiyou">
+                <dt class="u_dt"><label>名前<span class="mozi">(変更不可)</span></label></dt>
+                <dd><input class="names" type="text" name="name" value={{data[1]}} readonly></dd>
+            </div>
+
+            <div class="naiyou">
+                <dt class="u_dt"><label>メールアドレス<span class="hissu">必須</span></label></dt>
+                <dd><input class="names" type="email" name="mail" value={{data[2]}} maxlength="100" required></dd>
+            </div>
+
+            <div class="naiyou">
+                <dt class="u_dt"><label>郵便番号<span class="hissu">必須</span></label></dt>
+                <dd><input class="names" type="text" name="zip" required value={{data[3]}}></dd>
+            </div>
+
+            <div class="naiyou">
+                <dt class="u_dt"><label>住所<span class="hissu">必須</span></label></dt>
+                <dd>
+                    <select name="ken" required  class="names">
+                        <option value={{ken}} selected>{{ken}}</option>
+                        {% for i in list %}
+                            <option value={{i}}>{{i}}</option>
+                        {% endfor %}
+                    </select>
+                    <input class="namesa" type="text" name="zyusyo" required value={{zyusyo}}>
+                </dd>
+        </dl>
+        <br>
+        <button type="submit" class="buttons">変更決定</button>
+    </form>
+    <br>
+    <form action="{{url_for('user')}}" method="GET" class="foam">
+        <button type="submit" class="buttons">戻る</button>
+    </form>
+</div>
+<br><br><br>
+{% endblock %}

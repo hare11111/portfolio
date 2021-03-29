@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="product">
+    <h1 id="taitoru">購入内容</h1>
+    {% for i in product_list %}
+        <span class="syouhin">{{i[1]}}</span><br>
+    {% endfor %}
+    <br><br>
+    <span class="gaku">合計金額・・・{{prices}}</span> <br>
+    <span class="gaku">購入数・・・{{cnts}}</span><br>
+    <span class="gaku">獲得ポイント・・・{{points}}</span><br>
+    <form action="{{url_for('point')}}" method="POST" class="foam">
+        <input type="hidden" name="prices" value={{prices}}>
+        <input type="hidden" name="cnts" value={{cnts}}>
+        <input type="hidden" name="points" value={{points}}>
+        <button type="submit" class="buttons">次へ</button>
+    </form>
+    <br>
+    <form action="{{url_for('cart')}}" method="GET" class="foam">
+        <button type="submit" class="buttons">戻る</button>
+    </form>
+</div>
+<br><br><br>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="product">
+    <h1 id="taitoru">注文確認</h1>
+    <h2>届け先</h2>
+    <span class="kakunin">名前・・・{{data[2]}}</span><br>
+    <span class="kakunin">メールアドレス・・・{{data[3]}}</span><br>
+    <span class="kakunin">郵便番号・・・{{data[3]}}</span><br>
+    <span class="kakunin">住所・・・{{data[4]}}</span><br>
+    <br>
+    <h2>購入商品</h2>
+        {% for i in product_list %}
+            <span class="syouhin">{{i[1]}}</span><br>
+        {% endfor %}
+    <br>
+    <h3>合計金額・・・<span>{{prices}}円</span></h3>
+    
+    <h3>購入数・・・<span>{{cnts}}個</span></h3>
+    
+    <h3>取得ポイント・・・<span>{{points}}ポイント</span></h3>
+    
+    <br><br>
+    <h3>利用ポイント・・・<span>{{pointer}}ポイント</span></h3>
+    
+    <h2>請求金額・・・<span>{{price}}円</span></h2>
+    <div>
+        <form action="{{url_for('last2')}}" method="POST">
+            <input type="hidden" name="prices" value={{prices}}>
+            <input type="hidden" name="cnts" value={{cnts}}>
+            <input type="hidden" name="points" value={{points}}>
+            <input type="hidden" name="pointer" value={{pointer}}>
+            <input type="hidden" name="price" value={{price}}>
+            <button type="submit" class="buttons">購入</button>
+        </form>
+        <br>
+        <form action="{{url_for('point')}}" method="POST">
+            <input type="hidden" name="prices" value={{prices}}>
+            <input type="hidden" name="cnts" value={{cnts}}>
+            <input type="hidden" name="points" value={{points}}>
+            <input type="hidden" name="pointer" value={{pointer}}>
+            <input type="hidden" name="price" value={{price}}>
+            <button type="submit" class="buttons">戻る</button>
+        </form>
+    </div>
+</div>
+<br><br><br>
+{% endblock %}

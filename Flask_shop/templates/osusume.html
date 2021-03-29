@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="product">
+    <h1 id="taitoru">おすすめ商品一覧</h1>
+    <a href="{{url_for('tops')}}"><p class="osusume">商品一覧</p></a>
+</div>
+    {% for u in osusume %}
+        <div class="imgagse">
+            {% set name = "images/" + u[1] %}
+            <a href="{{url_for('syousai1', name=u[0])}}"><img src="{{url_for('static', filename=name)}}" alt={{u[0]}}>
+            <p>{{u[0]}}</p></a>
+        </div>
+    {% endfor %}
+    <br><br><br>
+    <div id="product">
+        <h1 id="taitoru">あなたのお買い物傾向から</h1>
+    </div>
+    {% for u in u_osusume %}
+        <div class="imgagse">
+            {% set name = "images/" + u[1] %}
+            <a href="{{url_for('syousai1', name=u[0])}}"><img src="{{url_for('static', filename=name)}}" alt={{u[0]}}>
+            <p>{{u[0]}}</p></a>
+        </div>
+    {% endfor %}
+    <br><br><br>
+{% endblock %}

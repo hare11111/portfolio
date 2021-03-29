@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{url_for('static', filename='favicon/favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>ショッピングアプリ</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('tops')}}">商品</a></li>
+                <li><a href="{{url_for('cart')}}">カート</a></li>
+                <li><a href="{{url_for('user')}}">ユーザー情報</a></li>
+                <li><a href="{{url_for('history')}}">購入履歴</a></li>
+                <li><a href="{{url_for('logout')}}">ログアウト</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    <div>
+        <footer>
+                <div>
+                    <small>&copy;2021年　ショッピングアプリ</small>
+                </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{url_for('static', filename='favicon/favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login_syoki.css')}}">
+    <title>初期登録</title>
+</head>
+<body>
+    <div id="syoki">
+        <h1>初期登録</h1>
+        <p>下記の内容に入力してください</p>
+        <form action="{{url_for('ninsyou')}}" method="POST">
+            
+            <dl class="dls">
+
+                <div class="naiyou">
+                    <dt><label class="names">ID<span class="hissu">必須</span></label></dt>
+                    <dd><input class="namea" type="text" name="id" required placeholder="例:tanaka" maxlength="20" height="100px"></dd>
+                </div>
+                
+                <div class="naiyou">
+                    <dt><label class="names">名前<span class="hissu">必須</span></label></dt>
+                    <dd><input class="namea" type="text" name="name" required placeholder="例:田中太郎" maxlength="20"></dd>
+                </div>
+                
+                
+                <div class="naiyou">
+                    <dt><label class="names">年齢<span class="hissu">必須</span></label></dt>
+                    <dd><input class="namea" type="text" name="age" required size="3"></dd>
+                </div>
+
+                <div class="naiyou">
+                    <dt><label class="names">生年月日<span class="hissu">必須</span></label></dt>
+                    <dd><input class="namea" type="date" name="birthday" required></dd>
+                </div>
+
+                <div class="naiyou">
+                    <dt><label class="names">性別<span class="hissu">必須</span></label></dt>
+                    <dd>
+                        <label><input type="radio" name="gender" value="男性" required checked>男性</label>
+                        <label><input type="radio" name="gender" value="女性">女性</label>
+                    </dd>
+                </div>
+
+                <div class="naiyou">
+                    <dt><label class="names">メールアドレス<span class="hissu">必須</span></label></dt>
+                    <dd><input class="namea" type="email" name="mail" required placeholder="例:xxx@morijyobi.ac.jp" maxlength="100" size="30"></dd>
+                </div>
+
+                <div class="naiyou">
+                    <dt><label class="names">郵便番号<span class="hissu">必須</span></label></dt>
+                    <dd><input class="namea" type="text" name="zip" required placeholder="例:0800032"></dd>
+                </div>
+
+                <div class="naiyou">
+                    <dt><label class="names">住所<span class="hissu">必須</span></label></dt>
+                    <dd>
+                        <select name="ken" class="namea" required>
+                            <option value=""selected>選択してください</option>
+                            {% for i in list %}
+                                <option value={{i}}>{{i}}</option>
+                            {% endfor %}
+                        </select>
+                        <input class="namea" type="text" name="zyusyo" required placeholder="例:盛岡市中央通3-3-3" size="30">
+                    </dd>
+                </div>
+
+            </dl>
+            <div class="buttons">
+                <button type="reset" class="button">入力内容をクリアする</button>
+                <button type="submit" class="button">メール送信</button>
+            </div>
+        </form>
+        <form action="{{url_for('login')}}">
+            <button type="submit" class="button">戻る</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{url_for('static', filename='favicon/favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login_syoki.css')}}">
+    <title>パスワード登録</title>
+</head>
+<body>
+    <div id="syoki">
+        <h1>パスワード登録</h1>
+        <p>パスワードを入力してください</p>
+        <form action="{{url_for('kakunin')}}" method="POST">
+            <dl class="dl">
+                <div class="naiyou">
+                    <dt><label class="names">パスワード<span class="mozi">(半角英数字8文字以上)</span></label></dt>
+                    <dd><input class="namea" type="password" name="pw" required minlength="8"></dd>
+                </div>
+
+                <div class="naiyou">
+                    <dt><label class="names">パスワード<span class="mozi">(もう一度入力してください)</span></label></dt>
+                    <dd><input class="namea" type="password" name="pws" required minlength="8"></dd>
+                </div>
+            </dl>
+            {% if error != None %}
+                <p class="error">{{error}}</p>
+            {% endif %}
+            <div class="buttons">
+                <button type="reset" class="button">入力内容をクリアする</button>
+                <button type="submit" class="button">内容確認</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

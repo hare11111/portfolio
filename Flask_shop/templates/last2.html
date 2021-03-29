@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="product">
+    <h1 id="taitoru">ご購入ありがとうございました。</h1>
+    <a href="{{url_for('tops')}}"><p class="osusume">買い物を続ける</p></a>
+    <a href="{{url_for('login')}}"><p class="osusume">ログアウト</p></a>
+</div>
+{% endblock %}

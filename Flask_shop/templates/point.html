@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="product">
+    <form action="{{url_for('last')}}" method="POST">
+        <input type="hidden" name="prices" value={{prices}}>
+        <input type="hidden" name="cnts" value={{cnts}}>
+        <input type="hidden" name="points" value={{points}}>
+        <h1 id="taitoru">使用ポイント</h1>
+        <label>
+            <label class="syouhin"><input type="radio" name="u_point" value="1" required checked>すべて使う(所持ポイント・・・{{point}})</label>
+        </label>
+        <br>
+        <label>
+            <label class="syouhin"><input type="radio" name="u_point" value="2">一部のポイントを使う <input type="number" name="pointer" size="5" value={{point}} min="0" max={{point}}></label>
+        </label> 
+        <div>
+            <button type="submit" class="buttons">次へ</button>
+        </div>
+    </form>
+    <br>
+    <form action="{{url_for('kounyu')}}" method="GET">
+        <div>
+                <input type="hidden" name="prices" value={{prices}}>
+                <input type="hidden" name="cnts" value={{cnts}}>
+                <input type="hidden" name="points" value={{points}}>
+                <button type="submit" class="buttons">戻る</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

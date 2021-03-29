@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="product">
+    <h1 id="taitoru">カート一覧</h1>
+        <table border="1" class="hyou">
+            <tr>
+                <th class="t">商品名</th>
+                <th class="t">分類</th>
+                <th class="t">値段</th>
+                <th class="t">個数</th>
+                <th class="t">詳細</th>
+                <th class="t">削除</th>
+            </tr>
+            {% for u in product_list %}
+            <tr>
+                <td>{{u[1]}}</td>
+                <td>{{u[2]}}</td>
+                <td>{{u[3]}}</td>
+                <td>{{u[4]}} </td>
+                <td><a href="{{url_for('syousai2', name=u[1], cnt=u[4])}}">詳細</a></td>
+                <td><a href="{{url_for('pop', count=u[6])}}">削除</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+            <br>
+            <div>
+                <form action="{{url_for('kounyu')}}">
+                    <button type="submit" class="buttons">購入</button>
+                </form>
+            <div>
+
+</div>
+{% endblock %}

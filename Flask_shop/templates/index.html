@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ショッピングアプリ</title>
+    <link rel="icon" href="{{url_for('static', filename='favicon/favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login_syoki.css')}}">
+</head>
+<body>
+    <form action="{{url_for('top')}}" method="POST">
+        <div id="log">
+            <h1>ログイン</h1>
+            {% if error != None %}
+                <p class="error">{{error}}</p>
+            {% endif %}
+            <dl class="dl">
+            <div class="ip">
+                <dt class="ips">ID:</dt>
+                <dd><input type="text" name="id" class="ipa"></dd>
+            </div>
+            <br>
+            <div class="ip">
+                <dt class="ips">パスワード:</dt>
+                <dd><input type="password" name="pw" class="ipa"></dd>
+            </div>
+            </dl>
+            <br>
+            <button type="submit" class="button">ログイン</button>
+        </div>
+    </form>
+    <br>
+    <div id="log">
+        <a href="{{url_for('syoki')}}">初期登録</a><br>
+        <a href="{{url_for('pw_sai')}}">パスワードをお忘れの方</a><br>
+    </div>
+</body>
+</html>

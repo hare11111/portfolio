@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{url_for('static', filename='favicon/favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login_syoki.css')}}">
+    <title>登録内容確認</title>
+</head>
+<body>
+<div id="syoki">
+    <h1>登録内容</h1>
+    <form action="{{url_for('toroku')}}" method="POST">
+        <input type="hidden" name="pw" value={{pw}}>
+        <input type="hidden" name="salt" value={{salt}}>
+        <dl class="dls">
+            <div class="naiyou">
+                <dt><label class="names">ID</label></dt>
+                <dd><label>{{data[0]}}</label></dd>
+            </div>
+
+            <div class="naiyou">
+                <dt><label class="names">名前</label></dt>
+                <dd><label>{{data[1]}}</label></dd>
+            </div>
+
+            <div class="naiyou">
+                <dt><label class="names">年齢</label></dt>
+                <dd><label>{{data[2]}}</label></dd>
+            </div>
+
+            <div class="naiyou">
+                <dt><label class="names">生年月日</label></dt>
+                <dd><label>{{data[3]}}</label></dd>
+            </div>
+
+            
+            <div class="naiyou">
+                <dt><label class="names">性別</label></dt>
+                <dd><label>{{data[4]}}</label></dd>
+            </div>
+            
+            <div class="naiyou">
+                <dt><label class="names">メールアドレス</label></dt>
+                <dd><label>{{data[5]}}</label></dd>
+            </div>
+            
+            <div class="naiyou">
+                <dt><label class="names">郵便番号</label></dt>
+                <dd><label>〒{{data[6]}}</label></dd>
+            </div>
+            
+            <div class="naiyou">
+                <dt><label class="names">住所</label></dt>
+                <dd><label>{{data[7]}}</label></dd>
+            </div>
+                            
+            <input type="hidden" name="pw" value={{pw}}>
+            <input type="hidden" name="salt" value={{salt}}> 
+        </dl>
+            <div>
+            <button type="submit" class="button">登録</button>
+            
+        </form>
+    <form action="{{url_for('login')}}">
+        <button type="submit" class="button">キャンセル</button>
+    </form>
+    
+</div>
+
+</body>
+</html>

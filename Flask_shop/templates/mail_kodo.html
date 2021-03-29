@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{url_for('static', filename='favicon/favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login_syoki.css')}}">
+    <title>パスワード再設定</title>
+</head>
+<body>
+<div id="syoki">
+    <h1>メール送信</h1>
+    <p>あなたが登録したメールアドレス宛に<br>パスワードリセット用のURLを送信しました。</p>
+    <a href="{{url_for('login')}}"><p>ログインページへ</p></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="product">
+    <h1 id="taitoru">購入履歴</h1>
+    {% if history != () %}
+        <table border="1" class="hyou">
+            <tr>
+                <th class="t">商品名</th>
+                <th class="t">分類</th>
+                <th class="t">個数</th>
+                <th class="t">購入日時</th>
+
+            </tr>
+            {% for u in history %}
+            <tr>
+                <td>{{u[0]}}</td>
+                <td>{{u[1]}}</td>
+                <td>{{u[2]}}</td>
+                <td>{{u[3]}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+    <p>まだ何も購入していません</p>
+    {% endif %}
+</div>
+<br><br><br>
+{% endblock %}

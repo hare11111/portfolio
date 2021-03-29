@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="product">
+    <h1 id="taitoru">商品一覧</h1>
+    <form action="{{url_for('top2')}}" method="GET">
+        <a href="{{url_for('osusume')}}"><p class="osusume">おすすめ商品</p></a>
+        <select name="clas">
+            <option value=""selected>分類</option>
+            {% for i in clas %}
+                <option value={{i[0]}}>{{i[0]}}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="name" placeholder="例:イーブイ">
+        <button type="submit">検索</button>
+    </form>
+</div>
+    {% for u in product %}
+        <div class="imgagse">
+            {% set name = "images/" + u[5] %}
+            <a href="{{url_for('syousai', name=u[1])}}"><img src="{{url_for('static', filename=name)}}" alt={{u[1]}}></a>
+            <a href="{{url_for('syousai', name=u[1])}}"><p>{{u[1]}}</p></a>
+        </div>
+        {% endfor %}
+        <br><br><br>
+{% endblock %}
