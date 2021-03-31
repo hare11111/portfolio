@@ -10,7 +10,7 @@
 
 ### 開発環境
 - Python Flask
-- Mysql
+- MySQL
 ### 実装機能一覧
 - sessionを使ったログイン機能
 - パスワードリセット機能
